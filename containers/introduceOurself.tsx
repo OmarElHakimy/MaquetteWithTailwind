@@ -7,7 +7,7 @@ const IntroduceOurself = () => {
                 <div className='col-span-12 lg:col-span-6 my-auto'>
                     <h1 className='font-semibold text-center lg:text-start text-6xl leading-normal'>Let's Introduce Ourself</h1>
                 </div>
-                <div className='col-span-1 border border-zinc-900 hidden lg:block' style={{width: "1px", marginRight: "75px"}}>
+                <div className='col-span-1 border-l-2 border-zinc-900 hidden lg:block'>
 
                 </div>
                 <div className="col-span-12 md:block lg:hidden my-4">
