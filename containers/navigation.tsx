@@ -33,13 +33,11 @@ const Navigation = () => {
                 <i className='bi bi-list text-4xl hover:cursor-pointer hover:scale-110' onClick={onClickHandler}></i>
             </div>
         </div>
-        {
-            isDisplay
-            &&
-            <div className='translation duration-500 ease-in-out translation-y-100 '>
+            {
+                isDisplay
+                &&
                 <NavMobi/>
-            </div>
-        }
+            }
         </>
     )
 }

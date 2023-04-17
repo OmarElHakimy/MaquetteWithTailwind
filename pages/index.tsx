@@ -18,18 +18,24 @@ const inter = Inter({ subsets: ['latin'] })
 
 const Home :FC<Props>= (props) => {
   return (
-    <div className={`container-2xl mx-auto border-box text-white ${inter.className}`}>
-      <div className='2xl:px-80 xl:px-20 lg:px-10 px-6 bg-black py-10'>
-        <Navigation/>
-        <Header/>
+    <div className={`border-box text-white ${inter.className}`}>
+      <div className='px-10 bg-black py-10'>
+        <div className='container mx-auto'>
+            <Navigation/>
+            <Header/>
+        </div>
       </div>
-      <div className='2xl:px-80 xl:px-20 lg:px-10 px-6 py-10 bg-black opacity-90'>
-        <IntroduceOurself/>
-        <WhyUs whyUs={props.whyUs}/>
-        <AreaOfPractice/>
+      <div className='px-10 py-10 bg-black opacity-90'>
+        <div className='container mx-auto'>
+          <IntroduceOurself/>
+          <WhyUs whyUs={props.whyUs}/>
+          <AreaOfPractice/>
+        </div>
       </div>
-      <div className='2xl:px-80 xl:px-20 lg:px-10 px-6 bg-black py-10'>
-        <Footer/>
+      <div className='px-10 bg-black py-10'>
+        <div className='container mx-auto'>
+          <Footer/>
+        </div>
       </div>
     </div>
   )
