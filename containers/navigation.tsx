@@ -1,9 +1,11 @@
 import {useState} from 'react'
 import Image from 'next/image'
+import { AnimatePresence, motion } from 'framer-motion'
 import Nav from '../components/navigation/nav'
 import logo from '../public/assets/images/logo.png'
 import Link from 'next/link'
 import NavMobi from '../components/navigation/navMobi';
+import {NavAnimation} from '../animation/animation';
 
 const Navigation = () => {
 
@@ -30,14 +32,18 @@ const Navigation = () => {
                 <Link href="/Contact" className='border-2 border-white border-solid px-4 py-2 hover:bg-white hover:text-black font-semibold'>Contact Now</Link>
             </div>
             <div className='flex xl:hidden justify-end items-center'>
-                <i className='bi bi-list text-4xl hover:cursor-pointer hover:scale-110' onClick={onClickHandler}></i>
+                <i className='bi bi-list text-4xl hover:cursor-pointer hover:scale-110 hover:text-yellow-500' onClick={onClickHandler}></i>
             </div>
         </div>
+            <AnimatePresence mode="wait">
             {
                 isDisplay
                 &&
-                <NavMobi/>
+                <motion.div className='block xl:hidden' initial="initial" animate="animate" exit="exit" variants={NavAnimation}>
+                    <NavMobi/>
+                </motion.div>
             }
+            </AnimatePresence>    
         </>
     )
 }
