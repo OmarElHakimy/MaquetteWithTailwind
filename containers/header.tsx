@@ -1,8 +1,12 @@
-// import {useState, useEffect} from 'react';
+import HeaderType from '../models/header';
 import Content from '../components/header/content';
-import Image from '../components/header/profil';
+import Profile from '../components/header/profil';
 
-const Header = () => {
+// type Props = {
+//     header: HeaderType,
+// }
+
+const Header :React.FC<any>= ({header}) => {
     
     // let screen = 0;
     // if(typeof window !== 'undefined'){
@@ -30,8 +34,8 @@ const Header = () => {
     
     return(
             <div className='grid grid-cols-12 py-10 xl:py-20 bg-black-200'>
-                <Content/>
-                <Image/>
+                <Content header={header}/>
+                <Profile images={header.images.data}/>
             </div>
         
     );

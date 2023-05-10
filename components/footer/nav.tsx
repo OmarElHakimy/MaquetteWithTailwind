@@ -1,24 +1,19 @@
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 
-const Nav = () => {
+const Nav :React.FC<any> = ({menu}) => {
     const router = useRouter();
 
     return(
         <div className="flex justify-left xl:justify-center">
             <ul className="xl:grid xl:grid-flow-col lg:gap-x-4 gap-2">
-                <li className='xl:my-0 my-2'>
-                    <Link href="/" className={router.pathname === "/" ? "font-medium hover:text-lg hover:text-yellow-500" : "font-semibold hover:text-lg hover:text-yellow-500"}>Home</Link>
-                </li>
-                <li className='xl:my-0 my-2'>
-                    <Link href="/" className={router.pathname === "/Attoneys" ? "font-medium hover:text-lg hover:text-yellow-500" : "font-semibold hover:text-lg hover:text-yellow-500"}>Attoneys</Link>
-                </li>
-                <li className='xl:my-0 my-2'>
-                    <Link href="/" className={router.pathname === "/practiceArea" ? "font-medium hover:text-lg hover:text-yellow-500" : "font-semibold hover:text-lg hover:text-yellow-500"}>Practice Areas</Link>
-                </li>
-                <li className='xl:my-0 my-2'>
-                    <Link href="/" className={router.pathname === "/About" ? "font-medium hover:text-lg hover:text-yellow-500" : "font-semibold hover:text-lg hover:text-yellow-500"}>About Us</Link>
-                </li>
+                {
+                    menu.map((navItem :any) => (
+                        <li key={navItem.url} className='xl:my-0 my-2'>
+                            <Link href={`${navItem.url}`} className={router.pathname == navItem.url ? "font-normal hover:text-lg hover:text-yellow-500" : "font-semibold hover:text-lg hover:text-yellow-500"}>{navItem.title}</Link>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     )

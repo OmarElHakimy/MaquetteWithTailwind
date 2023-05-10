@@ -1,5 +1,7 @@
 export default interface WhyUs{
     id :number;
-    rate :number;
-    description :string;
+    attributes: {
+        rate :number;
+        description :string;
+    }
 }
